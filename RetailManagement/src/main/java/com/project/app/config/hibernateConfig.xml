@@ -15,19 +15,12 @@
 		http://www.springframework.org/schema/tx/spring-tx.xsd">
  
 <!-- Step 1: DataSource and connection pool configuration-->
-	<bean id="myDataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource"
-          destroy-method="close">
-        <property name="driverClass" value="org.postgresql.Driver" />
-        <property name="jdbcUrl" value="jdbc:postgresql://localhost:5432/SpringandHibernate"/>
-        <property name="user" value="postgres" />
-        <property name="password" value="postgres" /> 
- 
-        <!-- Connection pool properties for ComboPooledDataSource -->
-        <!-- <property name="minPoolSize" value="3" />
-        <property name="maxPoolSize" value="10" />
-        <property name="maxIdleTime" value="10000" /> -->
-	</bean>  
-	
+	<bean id="myDataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+		<property name="driverClassName" value="org.postgresql.Driver" />
+		<property name="url" value="jdbc:postgresql://localhost:5432/SpringandHibernate" />
+		<property name="username" value="postgres" />
+		<property name="password" value="postgres" />
+	</bean>
     <!-- Step 2: Hibernate session factory configuration -->
 	<bean id="sessionFactory"
 		class="org.springframework.orm.hibernate5.LocalSessionFactoryBean">
@@ -35,8 +28,9 @@
 		<property name="hibernateProperties">
 		   <props>
 		      <prop key="hibernate.dialect">org.hibernate.dialect.PostgreSQLDialect</prop>
+		     <!--  <prop key="hbm2ddl.auto">update</prop> -->
 		      <prop key="hibernate.show_sql">true</prop>
-		      <prop key="hbm2ddl.auto">create</prop>
+		     
 		   </props>
 		</property>
 		<property name="packagesToScan" value="com.project.app.bean" />
@@ -44,7 +38,7 @@
  
     <!-- Step 3: Hibernate transaction manager -->
 	<bean id="appTransactionManager"
-            class="org.springframework.orm.hibernate4.HibernateTransactionManager">
+            class="org.springframework.orm.hibernate5.HibernateTransactionManager">
         <property name="sessionFactory" ref="sessionFactory"/>
     </bean>
     

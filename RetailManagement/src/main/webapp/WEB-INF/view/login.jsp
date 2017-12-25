@@ -65,7 +65,7 @@
 							<input type="password" class="form-control" id="password"	placeholder="Password">
 						</div>
 						<span class="help-block">Password error</span>
-						<button class="btn btn-lg btn-primary btn-block" type="submit">Login</button>
+						<button id="submit" class="btn btn-lg btn-primary btn-block" type="submit">Login Button</button>
 					</form>
 				</div>
 			</div>

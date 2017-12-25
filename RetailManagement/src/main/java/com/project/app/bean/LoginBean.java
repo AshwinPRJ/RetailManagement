@@ -5,8 +5,10 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+import com.project.app.constants.DBconstants;
+
 @Entity
-@Table(name = "login_details")
+@Table(name = "login_details", schema = DBconstants.PUBLIC_SCHEMA)
 public class LoginBean {
 	@Id
 	@Column(name="username")

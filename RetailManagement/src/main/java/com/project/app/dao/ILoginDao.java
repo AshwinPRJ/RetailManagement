@@ -1,9 +1,11 @@
 package com.project.app.dao;
 
+import java.io.Serializable;
+
 import com.project.app.bean.LoginBean;
 
 public interface ILoginDao {
 
-	String saveLogin(LoginBean loginBean);
+	LoginBean saveLogin(LoginBean loginBean);
 
 }

@@ -11,7 +11,7 @@ public class LoginServiceImpl implements ILoginService {
 	@Autowired
 	private ILoginDao iLoginDao;
 
-	public String saveLogin(LoginBean loginBean) {
+	public LoginBean saveLogin(LoginBean loginBean) {
 		return iLoginDao.saveLogin(loginBean);
 	}
 }

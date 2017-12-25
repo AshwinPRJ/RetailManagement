@@ -12,9 +12,9 @@ public class LoginDaoImpl implements ILoginDao {
 	@Autowired
 	private SessionFactory sessionFactory;
 	@Transactional
-	public String saveLogin(LoginBean loginBean) {
+	public LoginBean saveLogin(LoginBean loginBean) {
 		sessionFactory.getCurrentSession().save(loginBean);
-	      return "Saved Successfully";
+	      return loginBean;
 	}
 
 }
