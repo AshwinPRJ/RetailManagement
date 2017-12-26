@@ -1,25 +1,24 @@
-$( document ).ready(function() {
-	
+$(document).ready(function() {
+
 	// SUBMIT FORM
-    $("#login").submit(function(event) {
+	$("#login").submit(function(event) {
 		// Prevent the form from submitting via the browser.
 		event.preventDefault();
 		ajaxPost();
 	});
-    
-    
-    function ajaxPost(){
-    	// PREPARE FORM DATA
-    	var formData = {
-    		userName : $("#username").val(),
-    		password :  $("#password").val(),
-    	};
-    	
-    	// DO POST
-    	$.ajax({
+
+	function ajaxPost() {
+		// PREPARE FORM DATA
+		var formData = {
+			userName : $("#username").val(),
+			password : $("#password").val(),
+		};
+
+		// DO POST
+		$.ajax({
 			type : "POST",
-			contentType: 'application/json; charset=utf-8',
-			//url : window.location + "api/customer/save",
+			contentType : 'application/json; charset=utf-8',
+			// url : window.location + "api/customer/save",
 			url : "api/login/loginSave",
 			data : JSON.stringify(formData),
 			dataType : 'json',
@@ -31,14 +30,5 @@ $( document ).ready(function() {
 				console.log("ERROR: ", e);
 			}
 		});
-    	
-    	// Reset FormData after Posting
-    	//resetData();
-
-    }
-    
-   /* function resetData(){
-    	$("#firstname").val("");
-    	$("#lastname").val("");
-    }*/
+	}
 })
