@@ -19,16 +19,16 @@ public class UserTranscationsBean {
 	@Column(name = "user_transactions_id")
 	private Integer id;
 	@Column(name = "user_transactions_grahakid")
-	private String grahakId;
-	@Column(name = "user_transactions_grahakid")
+	private Integer grahakId;
+	@Column(name = "user_transactions_user_number")
 	private String usernumber;
-	@Column(name = "user_transactions_grahakid")
+	@Column(name = "user_transactions_food_purchased")
 	private BigDecimal foodPurchased;
-	@Column(name = "user_transactions_grahakid")
+	@Column(name = "user_transactions_nonfood_purchased")
 	private BigDecimal nonFoodPurchased;
-	@Column(name = "user_transactions_grahakid")
+	@Column(name = "user_transactions_total_amount_purchased")
 	private BigDecimal totalAmountPurchased;
-	@Column(name = "user_transactions_grahakid")
+	@Column(name = "user_transactions_earned_points")
 	private Integer earnedPoints;
 	@Column(name = "user_transactions_created_by")
 	private String createdBy;
@@ -41,7 +41,7 @@ public class UserTranscationsBean {
 	@Column(name = "user_transactions_updated_on")
 	private Date updatedDate;
 	@Column(name = "user_transactions_updated_time")
-	private String updatedTime;
+	private Date updatedTime;
 	/**
 	 * @return the id
 	 */
@@ -57,13 +57,13 @@ public class UserTranscationsBean {
 	/**
 	 * @return the grahakId
 	 */
-	public String getGrahakId() {
+	public Integer getGrahakId() {
 		return grahakId;
 	}
 	/**
 	 * @param grahakId the grahakId to set
 	 */
-	public void setGrahakId(String grahakId) {
+	public void setGrahakId(Integer grahakId) {
 		this.grahakId = grahakId;
 	}
 	/**
@@ -189,13 +189,13 @@ public class UserTranscationsBean {
 	/**
 	 * @return the updatedTime
 	 */
-	public String getUpdatedTime() {
+	public Date getUpdatedTime() {
 		return updatedTime;
 	}
 	/**
 	 * @param updatedTime the updatedTime to set
 	 */
-	public void setUpdatedTime(String updatedTime) {
+	public void setUpdatedTime(Date updatedTime) {
 		this.updatedTime = updatedTime;
 	}
 	

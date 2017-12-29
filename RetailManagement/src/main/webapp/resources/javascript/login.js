@@ -9,20 +9,27 @@ $(document).ready(function() {
 
 	function ajaxPost() {
 		// PREPARE FORM DATA
+		console.log($("#username").val());
+		console.log($("#password").val());
 		var formData = {
 			userName : $("#username").val(),
 			password : $("#password").val(),
 		};
 
+		/*var keyValue = {
+			"loginBean" : formData
+		};*/
+		var stringifyVar = JSON.stringify(formData);
 		// DO POST
 		$.ajax({
 			type : "POST",
 			contentType : 'application/json; charset=utf-8',
 			// url : window.location + "api/customer/save",
 			url : "api/login/loginSave",
-			data : JSON.stringify(formData),
+			data : stringifyVar,
 			dataType : 'json',
 			success : function(result) {
+				alert("success");
 				console.log(result);
 			},
 			error : function(e) {

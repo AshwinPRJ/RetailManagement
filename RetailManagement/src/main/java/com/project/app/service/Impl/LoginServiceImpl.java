@@ -12,6 +12,7 @@ public class LoginServiceImpl implements ILoginService {
 	private ILoginDao iLoginDao;
 
 	public LoginBean saveLogin(LoginBean loginBean) {
+		
 		return iLoginDao.saveLogin(loginBean);
 	}
 }
