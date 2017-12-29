@@ -13,9 +13,6 @@ import com.project.app.constants.DBconstants;
 @Table(name = "login_details", schema = DBconstants.PUBLIC_SCHEMA)
 public class LoginBean {
 	@Id
-	@Column(name="id")
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Integer serialNumber;
 	@Column(name="username")
 	private String userName;
 	@Column(name="password")

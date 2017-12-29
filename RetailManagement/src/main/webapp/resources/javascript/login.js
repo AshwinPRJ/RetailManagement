@@ -29,11 +29,11 @@ $(document).ready(function() {
 			data : stringifyVar,
 			dataType : 'json',
 			success : function(result) {
-				alert("success");
+				alert("success" + result.status);
 				console.log(result);
 			},
 			error : function(e) {
-				alert("Error!")
+				alert("Error!" + e.status)
 				console.log("ERROR: ", e);
 			}
 		});
