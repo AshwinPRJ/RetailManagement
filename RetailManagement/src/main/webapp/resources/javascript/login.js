@@ -4,7 +4,18 @@ $(document).ready(function() {
 	$("#login").submit(function(event) {
 		// Prevent the form from submitting via the browser.
 		event.preventDefault();
+	/*	if($("#username").val() == ""){
+			alert("enter username ");
+			$( "#username" ).focus();
+			return;
+		}
+		if($("#password").val() == ""){
+			alert("enter password ");
+			$( "#password" ).focus();
+			return;
+		}*/
 		ajaxPost();
+		
 	});
 
 	function ajaxPost() {
@@ -29,7 +40,7 @@ $(document).ready(function() {
 			data : stringifyVar,
 			dataType : 'json',
 			success : function(result) {
-				alert("success" + result.status);
+				alert("success " + result.statusType);
 				console.log(result);
 			},
 			error : function(e) {
